@@ -1,0 +1,193 @@
+Hyperloop Time Travel Calculator by Geraldo Pereira Junior
+Design document
+
+This document was updated after working through my code and analyzing it with a clean code perspective (concept based on Robert C. Martin's book). I altered the SOLUTION ALGORITHM part to make it more concise clean, by using more functions and better variables names.
+
+Step 1) Problem Statement
+I want to create a time travel calculator for Hyperloop technology. Users will choose a distance based on geolocations from point A to point B and click the button "CALCULATE." After clicking, the software will calculate how long it would take to make the trip using a Hyperloop transport system. The system will show the distance in miles and distance in kilometers as well as an image of a graphic map (using Google maps) of the distance and the time to do the trip.
+
+Nouns - point A, point B, distance in miles, distance in kilometers, image of a graphic map, time.
+
+Verbs - choose a distance, click the button (with function), calculate, show
+
+
+
+Step 2) Defining Diagram
+
+INPUT- 
+	point A
+	point B
+
+PROCESS - 
+	select point A with a selector showing the name of the city and state
+	select point B with a selector showing the name of the city and state
+
+	calculate the distance
+	calculate time
+
+	display the distance in miles and distance in kilometers and the time to complete the chosen route
+	display image of a graphic map
+
+OUTPUT - 
+	distance in miles
+	distance in kilometers
+	travel time
+	image of a graphic map
+
+
+Step 3) Solution Algorithm
+SOLUTION ALGORITHM:
+
+main
+  call function animationStart
+END
+
+animationStart 
+  initialize visualAnimation = false
+  initialize calculataingText 
+  initialize counting
+
+  IF visualAnimation == false
+    visualAnimation = true
+    alter #res area of the the html result tag  
+    alter #showImg area of the the html result tag
+    alter main of the the html result tag
+    alter #calcButton area of the the html result tag
+    alter #finalRes area of the the html result tag
+  ENDIF
+
+  Timer Condition setInterval
+    IF counting >= 7
+      stop setInterval method
+      figcaption area html tag = "Calculating..."
+      call validatingResults function
+    ELSE IF counting >= 5
+      figcaption area html tag = "Calculation Finished. Printing results."
+    ELSE IF counting >= 2
+      figcaption area html tag = "Finishing last details..."
+    ENDIF	
+    counting increment 1
+  ENDsetInterval
+END
+
+calculateDistance 
+  initialize cityTo
+  initialize destinyOptions
+  initialize destinyChosen
+  initialize distancy
+  initialize mapGraphicLocation
+
+  destinyOptions = selector option of the city of destination
+  cityTo = string of the destinyOption selector
+
+  IF cityTo is "to1" value THEN 
+    distancy = distancy of the city in miles
+    mapGraphicLocation = file location of map image
+  ELSE IF cityTo is "to2" value THEN
+    distancy = distancy of the city in miles
+    mapGraphicLocation = file location of map image
+  ELSE IF cityTo is "to3" value THEN
+    distancy = distancy of the city in miles
+    mapGraphicLocation = file location of map image
+  ELSE IF cityTo is "to4" value THEN
+    distancy = distancy of the city in miles
+    mapGraphicLocation = file location of map image
+  ELSE IF cityTo is "to5" value THEN
+    distancy = distancy of the city in miles
+    mapGraphicLocation = file location of map image
+  ELSE IF cityTo is "to6" value THEN
+    distancy = distancy of the city in miles
+    mapGraphicLocation = file location of map image
+  ENDIF 
+
+  return cityTo, distance, mapGraphicLocation
+END
+
+calculateTimeTravel
+  initialize distance = call calculateDistance function
+  initialize timeTravel
+
+  timeTravel = ((distancy/760)*60) + 5
+
+  return timeTravel
+END
+
+validatingResults
+  initialize destination = call calculateDistance function
+  initialize distance = destination array key number
+  initialize cityOfDestination = destination array key number
+  initialize timeTravel = call calculateTimeTravel function
+  initialize messageText
+
+  IF distance < 1500
+    messageText = cityOfDestination + " is " + distance + " miles (" + (distance*1.60934) + " km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be " + timeTravel + " minutes."
+
+  ELSE
+    messageText = cityOfDestination + " is " + distance + " miles (" + (distance*1.60934) + " km) is too far apart. Hyperloop transportation technology isn't worth traveling this distance."
+  ENDIF
+ 
+  call displayingResults passing messageText and cityOfDestination parameters
+END
+
+
+displayResult with messageText as a parameter
+  initialize textResult
+  initialize mapResult
+  initialize createImg
+  initialize map
+
+  textResult = text place of result area in the HTML code
+  mapResult = designed map place of result area in the HTML code
+  createImg = create new img html element with a method
+
+  clean the current text displayed on the screen
+
+  textResult = messageText
+
+  createImg = src attribute value 
+  createImg = alt attribute value
+
+  append new child on mapResult using createImg variable
+
+END
+
+
+Step 4) Test Cases
+
+VARIABLES: pointA, pointB
+
+TEST CASE 1:
+  INPUT VALUES: Eau Claire - WI, Minneapolis/St. Paul - MN
+  
+  YOUR EXPECTED RESULT - (Fill this out before you test your code):
+    Minneapolis/St. Paul, MN is 92.7 miles (149 km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be 12.32 minutes.
+  
+  YOUR ACTUAL RESULT - (Fill this out after you test your code):
+    Minneapolis/St. Paul, MN is 92.7 miles (149 km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be 12.32 minutes.
+
+TEST CASE 2:
+  INPUT VALUES: Eau Claire - WI, Lambeau Field, Green Bay - WI
+  
+  YOUR EXPECTED RESULT - (Fill this out before you test your code):
+    Lambeau Field, Green Bay is 191.3 miles (308 km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be 20.10 minutes.
+
+  YOUR ACTUAL RESULT - (Fill this out after you test your code):
+    Lambeau Field, Green Bay is 191.3 miles (308 km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be 20.10 minutes.
+TEST CASE 3:
+
+  INPUT VALUES: Eau Claire - WI, Chicago - IL
+  
+  YOUR EXPECTED RESULT - (Fill this out before you test your code):
+    Chicago, IL is 317 miles (510 km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be 30.03 minutes.
+  
+  YOUR ACTUAL RESULT - (Fill this out after you test your code):
+    Chicago, IL is 317 miles (510 km) away from Eau Claire, WI. The time to travel this distance using a Hyperloop technology would be 30.03 minutes.
+
+TEST CASE 4:
+  INPUT VALUES: Eau Claire - WI, Los Angeles - CA 
+  
+  YOUR EXPECTED RESULT - (Fill this out before you test your code):
+    Los Angeles, CA is 1953.2 miles (3143 km) is too far apart. Hyperloop transportation technology isn't worth traveling this distance.
+  
+  YOUR ACTUAL RESULT - (Fill this out after you test your code):
+    Los Angeles, CA is 1953.2 miles (3143 km) is too far apart. Hyperloop transportation technology isn't worth traveling this distance.

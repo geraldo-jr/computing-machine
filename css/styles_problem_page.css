@@ -1,0 +1,61 @@
+#wrapper {
+  min-height:100%;
+  position:relative;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333333;
+  color: white;
+  display: block;
+  padding: 5px 0px 20px 10px;
+  overflow: auto;
+}
+
+h1, h2, h4 {
+  margin: 0px;
+  padding: 0px;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+
+main {
+  margin: 1em;
+  padding-bottom: 2em;
+}
+
+pre.output {
+  background-color: #CCCCCC;
+  display: block;
+  padding: 20px;
+  overflow: auto;
+}
+
+pre.pseudocode {
+  background-color: #000000;
+  color: yellow;
+  display: inline-flexbox;
+  padding: 10px;
+  overflow: auto;
+  margin: auto;
+  text-overflow: clip;
+}
+
+footer {
+  background-color: #EFEFEF;
+  bottom: 0;
+  height: 1em;
+  left: 0;
+  padding: .5em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}

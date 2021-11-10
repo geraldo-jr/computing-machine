@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperloop Journey</title>
+    <link rel="stylesheet" href="css/estilo_index.css">
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <header>
+        <div id="logo">
+          <img src="images/hyperloop-logo.png" alt="">
+        </div>
+        <h1>Hyperloop Journey</h1>
+        <h2>
+          Get onboard to the future of transportation<br>
+        </h2> 
+          
+        <p>
+          Before buying your ticket, check how long it will take to get to your destiny using our Hyperloop technology. <br>
+        </p>
+      </header>
+      
+      <main>
+        <p>
+          The Hyperloop technology is a futuristic vision for a transportation system of magnetically levitating pods traveling through nearly airless tubes at speeds of up to 760 mph (1,223 km/h). First public conceived by Tesla and SpaceX CEO Elon Musk and now applied in different projects around the globe by different companies and universities.
+          <br><br> 
+          Chose below your distance to calculate your journey time using the hyperloop techonolgy.
+        </p>
+
+        <div id="selectionWrap">
+          <div id="from">
+            FROM: 
+            <select name="choseYourDestiny" id="fromSelector">
+              <option value="from1">Eau Claire, WI</option>
+            </select>
+          </div>
+          
+          <div id="to">
+            TO:
+            <select name="destiny" id="toSelector">
+              <option value="to1">Minneapolis/St. Paul, MN</option>
+              <option value="to2">Lambeau Field, Green Bay</option>
+              <option value="to3">Chicago, IL</option>
+              <option value="to4">Los Angeles, CA</option>
+              <option value="to5">New York, NY</option>
+              <option value="to6">Miami, FL</option>
+            </select>
+          </div>
+          <button id="calcButton" onclick="main()">Calculate travel time</button>
+        </div>
+        <div id="res">
+          <div id="finalRes">
+
+            <div id="textResult">
+              
+            </div>
+            <div id="mapResult">
+              
+            </div>
+          </div>
+          
+          <div id="showImg">
+            
+            <figure>
+              <figcaption>Calculating...</figcaption>
+              <img src="images/hyperloop.gif" alt=""> 
+            </figure>
+            
+          </div>
+        </div>
+
+        <p>
+          To know more about this transportation technology, please, refer to <a href="https://www.youtube.com/watch?v=zcikLQZI5wQ" target="_blank">this video.</a>
+        </p>
+      </main>
+      
+      <footer>
+        <p>&copy; Geraldo Pereira (Programming Fundamentals. Class taught by Eric Wackwitz) December 2020</p>
+        <p>Check the Problem Statement <a href="problem_statement_page.html">page here</a></p>
+      </footer>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
